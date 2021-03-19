@@ -28,7 +28,7 @@ namespace UserWebApi.Controllers
         {
             return await db.Items.ToListAsync();
         }
-        // GET api/users/5
+        // GET api/admin/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Item>> Get(int id)
         {
@@ -37,7 +37,7 @@ namespace UserWebApi.Controllers
                 return NotFound();
             return new ObjectResult(item);
         }
-        // POST api/Items
+        // POST api/admin
         [HttpPost]
         public async Task<ActionResult<Item>> Post(Item item)
         {
@@ -50,7 +50,7 @@ namespace UserWebApi.Controllers
             await db.SaveChangesAsync();
             return Ok(item);
         }
-        // PUT api/Items/
+        // PUT api/admin/
         [HttpPut]
         public async Task<ActionResult<Item>> Put(Item item)
         {
@@ -67,7 +67,7 @@ namespace UserWebApi.Controllers
             await db.SaveChangesAsync();
             return Ok(item);
         }
-        // DELETE api/Items/5
+        // DELETE api/admin/5
         [HttpDelete("{id}")]
         public async Task<ActionResult<Item>> Delete(int id)
         {
